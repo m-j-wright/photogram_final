@@ -26,6 +26,14 @@ class User < ApplicationRecord
 
   # Indirect associations
 
+  has_many   :followers,
+             :through => :follow_requests_received,
+             :source => :sender
+
+  has_many   :leaders,
+             :through => :follow_requests_sent,
+             :source => :recipient
+
   # Validations
 
   validates :username, :uniqueness => true
