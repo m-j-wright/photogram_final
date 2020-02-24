@@ -4,6 +4,8 @@ RSpec.describe User, type: :model do
   
     describe "Direct Associations" do
 
+    it { should have_many(:follow_requests_received) }
+
     it { should have_many(:follow_requests_sent) }
 
     it { should have_many(:comments) }
